@@ -1,0 +1,212 @@
+:root {
+    --bg-dark: #0a0f18;
+    --steel-blue: #1e2a3a;
+    --accent-blue: #00d4ff;
+    --text-main: #e0e6ed;
+    --text-dim: #94a3b8;
+    --hacker-green: #00ff41;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(10, 15, 24, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid var(--steel-blue);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    background: var(--accent-blue);
+    color: var(--bg-dark);
+    padding: 5px 12px;
+    font-weight: bold;
+    border-radius: 4px;
+    font-family: 'Fira Code', monospace;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dim);
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent-blue);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.terminal-text {
+    color: var(--hacker-green);
+    font-family: 'Fira Code', monospace;
+    margin-bottom: 1rem;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    letter-spacing: -2px;
+    margin-bottom: 0.5rem;
+}
+
+.hero h3 {
+    color: var(--accent-blue);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+/* Common Section Styling */
+.section {
+    padding: 100px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-family: 'Fira Code', monospace;
+    color: var(--accent-blue);
+    margin-bottom: 3rem;
+    border-left: 4px solid var(--accent-blue);
+    padding-left: 15px;
+}
+
+/* Database-style Cards */
+.db-card, .skill-box, .testimonial-card {
+    background: var(--steel-blue);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.skill-box:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-blue);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill-box {
+    text-align: center;
+}
+
+/* Buttons */
+.btn {
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+    font-family: 'Fira Code', monospace;
+}
+
+.primary-btn {
+    background: var(--accent-blue);
+    color: var(--bg-dark);
+}
+
+.secondary-btn {
+    border: 1px solid var(--accent-blue);
+    color: var(--accent-blue);
+    margin-left: 1rem;
+}
+
+/* Testimonial Carousel */
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.testimonial-card {
+    min-width: 100%;
+}
+
+/* Responsive */
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--bg-dark);
+        padding: 2rem;
+        text-align: center;
+    }
+    .nav-links.active { display: flex; }
+    .hamburger { display: block; }
+    .hero h1 { font-size: 2.5rem; }
+}
+
+footer {
+    padding: 50px 20px;
+    text-align: center;
+    border-top: 1px solid var(--steel-blue);
+    color: var(--text-dim);
+}
